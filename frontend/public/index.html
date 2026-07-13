@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#667eea" />
+    <meta
+      name="description"
+      content="Student Assignment Submission Portal - Submit assignments online, get marks and feedback"
+    />
+
+    <title>Assignment Portal | Student Assignment Submission System</title>
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+
+    <style>
+      /* Custom loading spinner while React loads */
+      .loading-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        font-family: "Poppins", sans-serif;
+      }
+
+      .loading-content {
+        text-align: center;
+        color: white;
+      }
+
+      .loading-spinner {
+        width: 50px;
+        height: 50px;
+        border: 4px solid rgba(255, 255, 255, 0.3);
+        border-top: 4px solid white;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin: 0 auto 20px;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      .loading-text {
+        font-size: 18px;
+        margin-top: 20px;
+        opacity: 0.9;
+      }
+
+      .loading-subtext {
+        font-size: 14px;
+        margin-top: 10px;
+        opacity: 0.7;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <!-- Loading animation while React is loading -->
+      <div class="loading-container">
+        <div class="loading-content">
+          <div class="loading-spinner"></div>
+          <div class="loading-text">Loading Assignment Portal...</div>
+          <div class="loading-subtext">
+            Please wait while we set up your workspace
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
