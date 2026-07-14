@@ -13,10 +13,12 @@ require("dotenv").config();
 const app = express();
 
 // ========== CORS CONFIGURATION ==========
-// For Render deployment, allow all origins (or specify your frontend URL)
 app.use(
   cors({
-    origin: "*", // Or: 'https://assignment-portal-frontend.onrender.com'
+    origin: [
+      "https://assignment-submission-portal-frontend.onrender.com",
+      "http://localhost:3000",
+    ],
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
@@ -327,13 +329,11 @@ app.post(
       });
 
       await submission.save();
-      res
-        .status(201)
-        .json({
-          success: true,
-          message: "Submitted successfully!",
-          submission,
-        });
+      res.status(201).json({
+        success: true,
+        message: "Submitted successfully!",
+        submission,
+      });
     } catch (error) {
       console.error("❌ Submission error:", error);
       res.status(500).json({ message: error.message });
